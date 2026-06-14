@@ -35,7 +35,7 @@ export const mid3 = (a, b, c) => {
         return b;
     }
 
-};
+}
 export const lastFirst = (nameObj) => {
     
     if (nameObj.first == null){
@@ -73,3 +73,36 @@ export const subArray = (chain, indexes) => {
 export const over21 = (peopleObjs) => peopleObjs.filter((person) => person.age >= 21);
 export const product = (numberArr) => numberArr.reduce((arrNumber, n) => arrNumber * n, 1);
 export const getRepeats = (numberReps) => numberReps.filter((index, n) => numberReps.indexOf(index) === n && numberReps.lastIndexOf(index) != n);
+
+// DOM Operations
+export const moduleTitles = () => {
+  const elementos = document.querySelectorAll(".module-title");
+
+  const titulos = [];
+
+  for (const elemento of elementos) {
+    titulos.push(elemento.textContent.trim());
+  }
+
+  return titulos;
+}
+export const goPurple = () => {
+    const titulosEjs = document.querySelectorAll(".exercise-name");
+    const tituloPur = Array.from(titulosEjs).find(el => el.textContent.trim() == "goPurple");
+
+    if(tituloPur){
+        tituloPur.style.color = "white";
+        tituloPur.style.background = "purple";
+        return "Go Purple!"
+    }
+
+}
+export const copycat = (n) => {
+    const filas = Array.from(document.querySelectorAll(".test-result"));
+
+    const fila = filas.find(f =>
+        f.children[0].textContent.trim() === `copycat(${n})`
+    );
+
+    return eval(fila.children[1].textContent);
+}

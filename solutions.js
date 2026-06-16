@@ -67,12 +67,13 @@ export const lastFirst = (nameObj) => {
 }
 
 // Arrays
-export const subArray = (chain, indexes) => {
-    return indexes.map(indexes => chain[indexes]);
-}
+export const subArray = (chain, indexes) => indexes.map(indexes => chain[indexes]);
 export const over21 = (peopleObjs) => peopleObjs.filter((person) => person.age >= 21);
 export const product = (numberArr) => numberArr.reduce((arrNumber, n) => arrNumber * n, 1);
 export const getRepeats = (numberReps) => numberReps.filter((index, n) => numberReps.indexOf(index) === n && numberReps.lastIndexOf(index) != n);
+
+// Arrays and Strings
+
 
 // DOM Operations
 export const moduleTitles = () => {

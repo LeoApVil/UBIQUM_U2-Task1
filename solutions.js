@@ -71,9 +71,19 @@ export const subArray = (chain, indexes) => indexes.map(indexes => chain[indexes
 export const over21 = (peopleObjs) => peopleObjs.filter((person) => person.age >= 21);
 export const product = (numberArr) => numberArr.reduce((arrNumber, n) => arrNumber * n, 1);
 export const getRepeats = (numberReps) => numberReps.filter((index, n) => numberReps.indexOf(index) === n && numberReps.lastIndexOf(index) != n);
+export const aboveAverage = (arr) => arr.filter((persona) => persona.score > ((arr.reduce((acc, persona) => acc + persona.score, 0))/arr.length));
 
 // Arrays and Strings
-
+export const reverseNumber = (x) => {
+    const convText = String(x);
+    const convArr = convText.split('').reverse().join("");
+    return Number(convArr);
+};
+export const isWordAnagram = (x, y) => x.toLowerCase().replaceAll(" ", "").split('').sort().join() === y.toLowerCase().replaceAll(" ", "").split('').sort().join() ? true : false;
+export const isPhraseAnagram = (x, y) => x.toLowerCase().replaceAll(" ", "").split('').sort().join() === y.toLowerCase().replaceAll(" ", "").split('').sort().join() ? true : false;
+export const longestWords = (arr) => {
+    
+}
 
 // DOM Operations
 export const moduleTitles = () => {

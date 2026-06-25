@@ -51,19 +51,6 @@ export const lastFirst = (nameObj) => {
             return nameObj.first;
         }
     } 
-    
-
-    /*
-    if(nameObj.first == null && nameObj.last == null){
-        return '';
-    } else if(nameObj.first != null && nameObj.last != null){
-        return `${nameObj.last}, ${nameObj.first}`;
-    } else if(nameObj.first == null && nameObj.last != null){
-        return nameObj.last;
-    }else if(nameObj.first != null && nameObj.last == null){
-        return nameObj.first;
-    }
-    */
 }
 
 // Arrays
@@ -81,8 +68,29 @@ export const reverseNumber = (x) => {
 };
 export const isWordAnagram = (x, y) => x.toLowerCase().replaceAll(" ", "").split('').sort().join() === y.toLowerCase().replaceAll(" ", "").split('').sort().join() ? true : false;
 export const isPhraseAnagram = (x, y) => x.toLowerCase().replaceAll(" ", "").split('').sort().join() === y.toLowerCase().replaceAll(" ", "").split('').sort().join() ? true : false;
-export const longestWords = (arr) => {
-    
+export const longestWords = (txt) => {
+    if (txt == ''){ return []}
+
+    let palabras = txt.split(' ');
+    palabras = palabras.map(palabra => palabra.replace(/[.,!?;:]/g, ""));
+
+    let maxLen = 0;
+    for(let palabra of palabras){
+        if(palabra.length > maxLen){
+            maxLen = palabra.length
+        }
+    }
+
+    let palabrasFinal = [];
+
+    for(let palabra of palabras){
+        if(palabra.length === maxLen){
+            palabrasFinal.push(palabra)
+        }
+    }
+
+    return palabrasFinal;
+
 }
 
 // DOM Operations
